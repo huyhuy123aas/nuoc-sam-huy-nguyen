@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nước Sâm Huy Nguyễn</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f8fff8;
+}
+
+/* MENU */
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:20px;
+    text-align:center;
+    background:rgba(0,100,0,0.8);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 20px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:gold;
+}
+
+/* HERO */
+
+.hero{
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+
+    background:
+    linear-gradient(rgba(0,0,0,.5),
+    rgba(0,0,0,.5)),
+    url("https://onplaza.vn/upload_images/images/ad/ns/ad-sam-tuoi-new/ad-nhan-sam-tuoi_08.jpg");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content{
+    max-width:700px;
+}
+
+.hero h1{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:22px;
+    line-height:1.6;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:15px 35px;
+    background:#28a745;
+    color:white;
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#1f7d35;
+    transform:translateY(-4px);
+}
+
+/* GIỚI THIỆU */
+
+.section{
+    padding:80px 30px;
+}
+
+.title{
+    text-align:center;
+    font-size:40px;
+    color:darkgreen;
+    margin-bottom:40px;
+}
+
+.intro{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+    font-size:20px;
+    line-height:1.8;
+}
+
+/* THỐNG KÊ */
+
+.stats{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.stat-box{
+    width:250px;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.stat-box h2{
+    color:green;
+    font-size:40px;
+}
+
+/* SẢN PHẨM NỔI BẬT */
+
+.products{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.product{
+    background:white;
+    width:300px;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.product:hover{
+    transform:translateY(-10px);
+}
+
+.product img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.product-content{
+    padding:20px;
+}
+
+.product h3{
+    color:darkgreen;
+}
+
+.price{
+    color:red;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+/* CTA */
+
+.cta{
+    background:linear-gradient(135deg,#0f9b0f,#057605);
+    color:white;
+    text-align:center;
+    padding:80px 20px;
+}
+
+.cta h2{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#014601;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:36px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+.title{
+    font-size:30px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+    <a href="index.html">Trang Chủ</a>
+    <a href="sanpham.html">Sản Phẩm</a>
+    <a href="dathang.html">Đặt Hàng</a>
+</nav>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>NƯỚC SÂM HUY NGUYỄN</h1>
+
+<p>
+Thanh nhiệt tự nhiên • Nấu mới mỗi ngày • Giao tận nơi
+</p>
+
+<a class="btn" href="sanpham.html">
+KHÁM PHÁ SẢN PHẨM
+</a>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="title">Về Chúng Tôi</h2>
+
+<div class="intro">
+
+Nước Sâm Huy Nguyễn được nấu từ các loại thảo mộc tự nhiên,
+mang đến hương vị thanh mát, giúp giải nhiệt cơ thể và bổ sung
+năng lượng cho ngày mới. Chúng tôi cam kết nấu mới mỗi ngày,
+đảm bảo chất lượng và an toàn.
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="title">Khách Hàng Tin Tưởng</h2>
+
+<div class="stats">
+
+<div class="stat-box">
+<h2>1000+</h2>
+<p>Chai đã bán</p>
+</div>
+
+<div class="stat-box">
+<h2>100%</h2>
+<p>Thảo mộc tự nhiên</p>
+</div>
+
+<div class="stat-box">
+<h2>24/7</h2>
+<p>Hỗ trợ khách hàng</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="title">Sản Phẩm Nổi Bật</h2>
+
+<div class="products">
+
+<div class="product">
+<img src="https://th.bing.com/th/id/R.2b3eccbc261e36c01a0ce06ade22d51a?rik=%2fqQAps9QESEGQQ&pid=ImgRaw&r=0">
+<div class="product-content">
+<h3>Nước Sâm 500ml</h3>
+<p>Thơm ngon, thanh mát.</p>
+
+</div>
+</div>
+
+<div class="product">
+<img src="https://file.hstatic.net/200000029694/file/ong-sam-co-cu-wonkisam-korean-ginseng-drink-han-quoc-10-chai-x-120ml-4_1024x1024.jpg">
+<div class="product-content">
+<h3>Nước Sâm 1L</h3>
+<p>Tiết kiệm cho gia đình.</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="cta">
+
+<h2>Bạn Đã Sẵn Sàng Giải Nhiệt?</h2>
+
+<p>Đặt hàng ngay hôm nay để nhận nước sâm tươi mới.</p>
+
+<br>
+
+<a class="btn" href="dathang.html">
+ĐẶT HÀNG NGAY
+</a>
+
+</section>
+
+<footer>
+
+<h3>NƯỚC SÂM HUY NGUYỄN</h3>
+
+<div style="text-align:center">
+
+<a href="https://www.facebook.com/athuw24.1" target="_blank">
+    Facebook
+</a>
+
+|
+
+<a href="tel:0328274316">
+    Gọi ngay
+</a>
+
+</div>
+</footer>
+
+</body>
+</html>
