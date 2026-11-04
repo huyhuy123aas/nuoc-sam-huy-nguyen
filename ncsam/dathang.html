@@ -255,14 +255,13 @@ function tinhTien(){
     document.getElementById("tongTien")
     .innerHTML =
     tong.toLocaleString("vi-VN") + "đ";
-
 }
 
 document
 .getElementById("orderForm")
 .addEventListener("submit",
 
-function(e){
+async function(e){
 
     e.preventDefault();
 
@@ -285,26 +284,30 @@ function(e){
     document.getElementById("tongTien")
     .innerText;
 
-    fetch(SCRIPT_URL,{
+    try{
 
-        method:"POST",
+        await fetch(SCRIPT_URL,{
 
-        body:JSON.stringify({
+            method:"POST",
 
-            ten:ten,
-            sdt:sdt,
-            sanPham:sanPham,
-            soLuong:soLuong,
-            tongTien:tongTien,
-            ghiChu:ghiChu
+            mode:"no-cors",
 
-        })
+            headers:{
+                "Content-Type":"application/json"
+            },
 
-    })
+            body:JSON.stringify({
 
-    .then(response => response.json())
+                ten:ten,
+                sdt:sdt,
+                sanPham:sanPham,
+                soLuong:soLuong,
+                tongTien:tongTien,
+                ghiChu:ghiChu
 
-    .then(data => {
+            })
+
+        });
 
         document
         .getElementById("successMessage")
@@ -323,17 +326,16 @@ function(e){
             behavior:"smooth"
         });
 
-    })
+    }
+    catch(error){
 
-    .catch(error => {
+        console.error(error);
 
         alert(
-        "Có lỗi khi gửi đơn hàng."
+            "❌ Không gửi được đơn hàng."
         );
 
-        console.log(error);
-
-    });
+    }
 
 });
 
