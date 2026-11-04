@@ -13,7 +13,7 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial,sans-serif;
+    font-family:Arial, sans-serif;
 }
 
 body{
@@ -57,10 +57,10 @@ form{
 }
 
 label{
-    font-weight:bold;
     display:block;
     margin-top:15px;
     margin-bottom:5px;
+    font-weight:bold;
 }
 
 input,
@@ -77,20 +77,20 @@ textarea{
 }
 
 .tong-tien{
-    margin-top:20px;
-    font-size:22px;
+    font-size:24px;
     font-weight:bold;
     color:red;
+    margin-top:20px;
 }
 
 button{
     width:100%;
     margin-top:20px;
     padding:15px;
-    background:green;
-    color:white;
     border:none;
     border-radius:10px;
+    background:green;
+    color:white;
     font-size:16px;
     font-weight:bold;
     cursor:pointer;
@@ -103,18 +103,19 @@ button:hover{
 .success{
     display:none;
     margin-top:20px;
-    background:#e8ffe8;
-    border:1px solid green;
     padding:15px;
     border-radius:10px;
+    border:1px solid green;
+    background:#eaffea;
     color:darkgreen;
     text-align:center;
 }
 
 .footer{
     text-align:center;
-    margin-top:40px;
     color:gray;
+    margin-top:40px;
+    padding:20px;
 }
 
 </style>
@@ -131,128 +132,109 @@ button:hover{
 
 <div class="container">
 
-<h1>🛒 ĐẶT HÀNG</h1>
+    <h1>🛒 ĐẶT HÀNG</h1>
 
-<form id="orderForm">
+    <form id="orderForm">
 
-<label>Họ và Tên</label>
-<input
-id="ten"
-type="text"
-required>
+        <label>Họ và Tên</label>
+        <input id="ten" type="text" required>
 
-<label>Số Điện Thoại</label>
-<input
-id="sdt"
-type="tel"
-required>
+        <label>Số Điện Thoại</label>
+        <input id="sdt" type="tel" required>
 
-<label>Sản Phẩm</label>
+        <label>Sản Phẩm</label>
 
-<select
-id="productSelect"
-required
-onchange="tinhTien()">
+        <select
+        id="productSelect"
+        onchange="tinhTien()"
+        required>
 
-<option value="">
--- Chọn sản phẩm --
-</option>
+            <option value="">
+            -- Chọn sản phẩm --
+            </option>
 
-<option value="NS01">
-NS01 - Nước Sâm 500ml
-</option>
+            <option value="NS01">
+            NS01 - Nước Sâm 500ml
+            </option>
 
-<option value="NS02">
-NS02 - Nước Sâm 1L
-</option>
+            <option value="NS02">
+            NS02 - Nước Sâm 1L
+            </option>
 
-<option value="NS03">
-NS03 - Nước Sâm Không Đường
-</option>
+            <option value="NS03">
+            NS03 - Nước Sâm Không Đường
+            </option>
 
-</select>
+        </select>
 
-<label>Số Lượng</label>
+        <label>Số Lượng</label>
 
-<input
-id="quantity"
-type="number"
-value="1"
-min="1"
-required
-oninput="tinhTien()">
+        <input
+        id="quantity"
+        type="number"
+        min="1"
+        value="1"
+        oninput="tinhTien()"
+        required>
 
-<div class="tong-tien">
+        <div class="tong-tien">
+            Tổng tiền:
+            <span id="tongTien">0đ</span>
+        </div>
 
-Tổng tiền:
-<span id="tongTien">
-0đ
-</span>
+        <label>Ghi Chú</label>
 
-</div>
+        <textarea
+        id="ghiChu"
+        rows="4"
+        placeholder="Ví dụ: giao sau 18h..."></textarea>
 
-<label>Ghi Chú</label>
+        <button type="submit">
+            ✅ XÁC NHẬN ĐẶT HÀNG
+        </button>
 
-<textarea
-id="ghiChu"
-rows="4"
-placeholder="Ví dụ: giao sau 18h..."></textarea>
+    </form>
 
-<button type="submit">
-✅ XÁC NHẬN ĐẶT HÀNG
-</button>
+    <div
+    id="successMessage"
+    class="success">
 
-</form>
+        ✅ Đặt hàng thành công!
 
-<div class="success" id="successMessage">
+        <br><br>
 
-✅ Đặt hàng thành công!
+        Chúng tôi sẽ liên hệ với bạn sớm nhất.
 
-<br><br>
-
-Cảm ơn bạn đã lựa chọn Nước Sâm Huy Nguyễn.
-Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất.
-
-</div>
+    </div>
 
 </div>
 
 <div class="footer">
-© 2026 Nước Sâm Huy Nguyễn
+    © 2026 Nước Sâm Huy Nguyễn
 </div>
 
 <script>
 
 const SCRIPT_URL =
-"https://script.google.com/macros/s/AKfycbxmtHebDtE2wYWfgZtVvuf7sXocESu7qqHqzPHxAcceZ6t92M2DMBDC90gL1CHfZkCW0A/exec";
+"https://script.google.com/macros/s/AKfycbyEsi_PiAhSGrShzwoKaO92s6_dewMVJzNYFWCkLvSBlY8CXaCIwE9xr3zMbzJmYljYbw/exec";
+
 function tinhTien(){
 
     const sp =
     document.getElementById("productSelect").value;
 
     const sl =
-    Number(
-        document.getElementById("quantity").value
-    );
+    Number(document.getElementById("quantity").value);
 
     let gia = 0;
 
-    if(sp === "NS01"){
-        gia = 10000;
-    }
-
-    if(sp === "NS02"){
-        gia = 18000;
-    }
-
-    if(sp === "NS03"){
-        gia = 12000;
-    }
+    if(sp === "NS01") gia = 10000;
+    if(sp === "NS02") gia = 18000;
+    if(sp === "NS03") gia = 12000;
 
     const tong = gia * sl;
 
-    document.getElementById("tongTien")
-    .innerHTML =
+    document.getElementById("tongTien").innerHTML =
     tong.toLocaleString("vi-VN") + "đ";
 }
 
@@ -280,33 +262,28 @@ async function(e){
     document.getElementById("ghiChu").value;
 
     const tongTien =
-    document.getElementById("tongTien")
-    .innerText;
+    document.getElementById("tongTien").innerText;
 
     try{
 
-        await fetch(SCRIPT_URL,{
-
-            method:"POST",
-
-            mode:"no-cors",
-
-            headers:{
-                "Content-Type":"application/json"
-            },
-
-            body:JSON.stringify({
-
-                ten:ten,
-                sdt:sdt,
-                sanPham:sanPham,
-                soLuong:soLuong,
-                tongTien:tongTien,
-                ghiChu:ghiChu
-
-            })
-
-        });
+        await fetch(
+            SCRIPT_URL,
+            {
+                method:"POST",
+                mode:"no-cors",
+                headers:{
+                    "Content-Type":"application/json"
+                },
+                body:JSON.stringify({
+                    ten,
+                    sdt,
+                    sanPham,
+                    soLuong,
+                    tongTien,
+                    ghiChu
+                })
+            }
+        );
 
         document
         .getElementById("successMessage")
@@ -320,10 +297,7 @@ async function(e){
         .getElementById("tongTien")
         .innerHTML = "0đ";
 
-        window.scrollTo({
-            top:0,
-            behavior:"smooth"
-        });
+        tinhTien();
 
     }
     catch(error){
@@ -333,7 +307,6 @@ async function(e){
         alert(
             "❌ Không gửi được đơn hàng."
         );
-
     }
 
 });
